@@ -1,45 +1,35 @@
 Good morning everyone.
 
-Today, I want to build something simple with you.
+Today, we are going to build a very small programming language with JavaScript.
 
-Not a framework.
-Not a library.
-A programming language.
+A programming language is simply a way for us to write instructions that a computer can understand.
 
-But we are not going to start with compilers, parsers, or theory.
-
-We are going to start with a problem.
-
-Imagine I write this:
+For example:
 
 ```text
 let x = 20
 print x + 2
 ```
 
-For us, this is easy to understand.
+We understand this easily.
 
-We can read it and say:
+But the computer does not start by seeing variables, numbers, or operations.
 
-`x` is 20.
+It starts with text.
 
-Then:
+So we need a few steps to move from text to execution.
 
-20 + 2 = 22.
+The first step is called a lexer.
 
-But for the computer, this is just text.
+A lexer takes source code and breaks it into meaningful pieces called tokens.
 
-So our first question is:
-
-How can we take this text and make the computer understand what is inside it?
-
-Let's start with something even smaller:
+For example:
 
 ```text
 20 + 22
 ```
 
-The first thing we need is to recognize:
+can become:
 
 ```text
 20
@@ -47,6 +37,14 @@ The first thing we need is to recognize:
 22
 ```
 
-So we have our first problem:
+and then:
 
-How do we break source code into meaningful pieces?
+```text
+NUMBER
++
+NUMBER
+```
+
+So our first problem is simple:
+
+How do we take source code and recognize these meaningful pieces?
